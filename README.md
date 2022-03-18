@@ -3,3 +3,4 @@
         git pull
 2. Из своей ветки "____":
         git merge main
+3. AAA
