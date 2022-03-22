@@ -1,0 +1,10 @@
+{% extends "index.html" %}
+{% block content %}
+<h1 class="font-pt">{{ news.title }}</h1>
+<div class="blog-post-thumbnail my-5">
+    <img src="{{ news.image.url }}" alt="">
+</div>
+<p/>
+    {{news.content}}
+</p>
+{% endblock %}

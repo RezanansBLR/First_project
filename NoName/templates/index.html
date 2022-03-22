@@ -230,58 +230,21 @@
     {% block content %}
     <!-- Welcome Blog Slide Area Start -->
     <section class="welcome-blog-post-slide owl-carousel">
+        {% for new in news %}
         <!-- Single Blog Post -->
-        <div class="single-blog-post-slide bg-img background-overlay-5" style="background-image: url({% static 'img/bg-img/1.jpeg' %});">
+        <div class="single-blog-post-slide bg-img background-overlay-5" style="background-image: url({{ new.image.url}});">
             <!-- Single Blog Post Content -->
             <div class="single-blog-post-content">
                 <div class="tags">
-                    <a href="#">crypto</a>
+                    <a href="#">{{ new.category.title }}</a>
                 </div>
-                <h3><a href="#" class="font-pt">Crypto world goes mad</a></h3>
+                <h3><a href="#" class="font-pt">{{ new.title }}</a></h3>
                 <div class="date">
-                    <a href="#">March 29, 2018</a>
+                    <a href="#">{{new.datetime}}</a>
                 </div>
             </div>
         </div>
-        <!-- Single Blog Post -->
-        <div class="single-blog-post-slide bg-img background-overlay-5" style="background-image: url({% static 'img/bg-img/t1.jpg' %});">
-            <!-- Single Blog Post Content -->
-            <div class="single-blog-post-content">
-                <div class="tags">
-                    <a href="#">IvAN</a>
-                </div>
-                <h3><a href="#" class="font-pt">IDI Rbotatb</a></h3>
-                <div class="date">
-                    <a href="#">SEICHas</a>
-                </div>
-            </div>
-        </div>
-        <!-- Single Blog Post -->
-        <div class="single-blog-post-slide bg-img background-overlay-5" style="background-image: url({% static 'img/bg-img/2.jpg' %});">
-            <!-- Single Blog Post Content -->
-            <div class="single-blog-post-content">
-                <div class="tags">
-                    <a href="#">live</a>
-                </div>
-                <h3><a href="#" class="font-pt">The latest news live</a></h3>
-                <div class="date">
-                    <a href="#">March 29, 2018</a>
-                </div>
-            </div>
-        </div>
-        <!-- Single Blog Post -->
-        <div class="single-blog-post-slide bg-img background-overlay-5" style="background-image: url({% static 'img/bg-img/3.jpg' %});">
-            <!-- Single Blog Post Content -->
-            <div class="single-blog-post-content">
-                <div class="tags">
-                    <a href="#">politics</a>
-                </div>
-                <h3><a href="#" class="font-pt">Financial advices </a></h3>
-                <div class="date">
-                    <a href="#">March 29, 2018</a>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
         <!-- Single Blog Post -->
         <div class="single-blog-post-slide bg-img background-overlay-5" style="background-image: url({% static 'img/bg-img/2.jpg' %});">
             <!-- Single Blog Post Content -->
