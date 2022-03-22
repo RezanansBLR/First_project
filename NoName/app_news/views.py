@@ -1,7 +1,13 @@
 from django.shortcuts import render
+from .models import News
 
-def test_view(request):  
-    return render(request, 'index.html', context={})
+def test_view(request):
+    news = News.objects.all()
+    return render(request, 'index.html', context={'news': news})
+
+def new(request):
+    news = News.objects.all()
+    return render(request, 'new.html', context={'news': news[0]})
 
 def category(request):
     return render(request, 'category.html', context={})
