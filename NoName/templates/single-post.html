@@ -1,4 +1,5 @@
 {% extends "index.html" %}
+{% load static %}
 {% block content %}
     <section class="single-post-area">
         <!-- Single Post Title -->
@@ -31,7 +32,7 @@
                     </div>
                     <div class="col-12">
                         <div class="single-post-thumb">
-                            <img src="img/blog-img/24.jpg" alt="">
+                            <img src="{% static 'img/blog-img/24.jpg' %}" alt="">
                         </div>
                     </div>
                     <div class="col-12 col-md-8">
@@ -73,7 +74,7 @@
                                 <div class="comment-wrapper d-md-flex align-items-start">
                                     <!-- Comment Meta -->
                                     <div class="comment-author">
-                                        <img src="img/blog-img/25.jpg" alt="">
+                                        <img src="{% static 'img/blog-img/25.jpg' %}" alt="">
                                     </div>
                                     <!-- Comment Content -->
                                     <div class="comment-content">
@@ -88,7 +89,7 @@
                                         <div class="comment-wrapper d-md-flex align-items-start">
                                             <!-- Comment Meta -->
                                             <div class="comment-author">
-                                                <img src="img/blog-img/25.jpg" alt="">
+                                                <img src="{% static 'img/blog-img/25.jpg' %}" alt="">
                                             </div>
                                             <!-- Comment Content -->
                                             <div class="comment-content">
