@@ -238,7 +238,7 @@
                 <div class="tags">
                     <a href="#">{{ new.category.title }}</a>
                 </div>
-                <h3><a href="#" class="font-pt">{{ new.title }}</a></h3>
+                <h3><a href="{% url 'new' new.slug %}" class="font-pt">{{ new.title }}</a></h3>
                 <div class="date">
                     <a href="#">{{new.datetime}}</a>
                 </div>
