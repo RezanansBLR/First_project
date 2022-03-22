@@ -1,13 +1,18 @@
+from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
 from django.shortcuts import render
 from .models import News
 
-def test_view(request):
-    news = News.objects.all()
-    return render(request, 'index.html', context={'news': news})
+class HomeListView(ListView):
+    model = News
+    context_object_name = 'news'
+    template_name = 'index.html'
 
-def new(request):
-    news = News.objects.all()
-    return render(request, 'new.html', context={'news': news[0]})
+class NewDetailView(DetailView):
+    model = News
+    context_object_name = 'new'
+    template_name = 'new.html'
+    
 
 def category(request):
     return render(request, 'category.html', context={})
