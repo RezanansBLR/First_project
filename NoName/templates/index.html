@@ -152,7 +152,7 @@
                     <!-- Logo Area -->
                     <div class="col-12 col-md-4">
                         <div class="logo-area">
-                            <a href="index.html"><img src="{% static 'img/core-img/logo.png' %}" alt="logo"></a>
+                            <a href="{% url 'home' %}"><img src="{% static 'img/core-img/logo.png' %}" alt="logo"></a>
                         </div>
                     </div>
                     <!-- Header Advert Area -->
@@ -180,7 +180,7 @@
                                         <li class="nav-item dropdown">
                                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
                                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                <a class="dropdown-item" href="index.html">Home</a>
+                                                <a class="dropdown-item" href="{% url 'home' %}">Home</a>
                                                 <a class="dropdown-item" href="catagory.html">Catagory</a>
                                                 <a class="dropdown-item" href="single-post.html">Single Post</a>
                                                 <a class="dropdown-item" href="about-us.html">About Us</a>
@@ -232,7 +232,7 @@
     <section class="welcome-blog-post-slide owl-carousel">
         {% for new in news %}
         <!-- Single Blog Post -->
-        <div class="single-blog-post-slide bg-img background-overlay-5" style="background-image: url({{ new.image.url}});">
+        <div class="single-blog-post-slide bg-img background-overlay-5" style="background-image: url({{ new.image_url}});">
             <!-- Single Blog Post Content -->
             <div class="single-blog-post-content">
                 <div class="tags">

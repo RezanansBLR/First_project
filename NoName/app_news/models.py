@@ -19,7 +19,8 @@ class News(models.Model):
     content = models.TextField(verbose_name="Содержание")
     datetime = models.DateTimeField(verbose_name="Дата публикации")
     url_source = models.CharField(max_length=200, verbose_name="Источник")
-    image = models.ImageField(verbose_name="Изображение")
+    image = models.ImageField(verbose_name="Изображение", null=True, blank=True)
+    image_url = models.CharField(max_length=100, verbose_name=' Ссылка на изображение', null=True, blank=True)
 
     class Meta():
         verbose_name = "Новость"

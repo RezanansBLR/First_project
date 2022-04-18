@@ -18,6 +18,8 @@ for new in news:
         soup_new = BeautifulSoup(html_new.text, 'html.parser')
         title = new.find('h4').find('a').text
         new_list.append(title)
+        category = 4
+        new_list.append(category)
         img = soup_new.find('img', class_='img-responsive').get('src')
         new_list.append(img)
         content_new = soup_new.find(class_='single-post-text').find_all('p')
