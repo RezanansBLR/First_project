@@ -1,10 +1,15 @@
 {% extends "index.html" %}
 {% block content %}
-<h1 class="font-pt">{{ new.title }}</h1>
-<div class="blog-post-thumbnail my-5">
-    <img src="{{ new.image.url }}" alt="">
+<h1 class="font-pt" style="text-align: center; padding-top: 30px;">{{ new.title }}</h1>
+
+<div class="blog-post-thumbnail my-5"">
+    <p style="text-align: right; font-family: 'PT Serif', serif !important; margin-right: 20%; margin-top: 0;">{{ new.datetime }}</p>
+    <img src="{{ new.image_url }}" style="display: block;margin-left: auto;margin-right: auto;" alt="">
 </div>
-<p/>
-    {{new.content}}
-</p>
+<div class="conteiner_post" style="width: 60%; ;margin-left: auto; margin-right: auto;">
+    <p style="font-family: 'PT Serif', serif !important; font-size: 30px; color: black; text-align:justify;">
+        {{new.content}}
+    </p>
+</div>
+
 {% endblock %}
