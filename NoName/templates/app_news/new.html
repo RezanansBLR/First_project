@@ -1,4 +1,4 @@
-{% extends "index.html" %}
+{% extends "app_news/index.html" %}
 {% block content %}
 <h1 class="font-pt" style="text-align: center; padding-top: 30px;">{{ new.title }}</h1>
 
@@ -11,5 +11,6 @@
         {{new.content}}
     </p>
 </div>
+<p style="text-align: right; font-family: 'PT Serif', serif !important; margin-right: 20%; margin-top: 0;">Источник: {{ new.url_source}}</p>
 
 {% endblock %}

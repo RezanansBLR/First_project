@@ -1,4 +1,4 @@
-{% extends "index.html" %}
+{% extends "app_news/index.html" %}
 {% load static %}
 {% block content %}
     <!-- Breadcumb Area Start -->
@@ -9,9 +9,9 @@
                     <div class="breacumb-content d-flex align-items-center justify-content-between">
                         <!-- Post Tag -->
                         <div class="gazette-post-tag">
-                            <a href="#">politics</a>
+                            <a href="#">{{ cat.title }}</a>
                         </div>
-                        <p class="editorial-post-date text-dark mb-0">March 29, 2016</p>
+                        <p class="editorial-post-date text-dark mb-0">{{date}}</p>
                     </div>
                 </div>
             </div>
@@ -123,75 +123,29 @@
     <section class="catagory-welcome-post-area section_padding_100">
         <div class="container">
             <div class="row">
+                {% for new in newscat %}
                 <div class="col-12 col-md-4">
                     <!-- Gazette Welcome Post -->
                     <div class="gazette-welcome-post">
                         <!-- Post Tag -->
                         <div class="gazette-post-tag">
-                            <a href="#">Politices</a>
+                            <a href="#">{{new.category.title}}</a>
                         </div>
-                        <h2 class="font-pt">The fine print of Trump's tax talking points</h2>
-                        <p class="gazette-post-date">March 29, 2016</p>
+                        <h2 class="font-pt">{{new.title}}</h2>
+                        <p class="gazette-post-date">{{new.datetime}}</p>
                         <!-- Post Thumbnail -->
                         <div class="blog-post-thumbnail my-5">
-                            <img src="{% static 'img/blog-img/18.jpg' %}" alt="post-thumb">
+                            <img src="{{new.image_url}}" alt="post-thumb">
                         </div>
-                        <!-- Post Excerpt -->
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ultrices egestas nunc, quis venenatis orci tincidunt id. Fusce commodo blandit eleifend.</p>
                         <!-- Reading More -->
                         <div class="post-continue-reading-share mt-30">
                             <div class="post-continue-btn">
-                                <a href="#" class="font-pt">Continue Reading <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                                <a href="{% url 'new' new.slug %}" class="font-pt">К прочтению <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-4">
-                    <!-- Gazette Welcome Post -->
-                    <div class="gazette-welcome-post">
-                        <!-- Post Tag -->
-                        <div class="gazette-post-tag">
-                            <a href="#">Politices</a>
-                        </div>
-                        <h2 class="font-pt">Report: Hundreds of EPA employees leave</h2>
-                        <p class="gazette-post-date">March 29, 2016</p>
-                        <!-- Post Thumbnail -->
-                        <div class="blog-post-thumbnail my-5">
-                            <img src="{% static 'img/blog-img/19.jpg' %}" alt="post-thumb">
-                        </div>
-                        <!-- Post Excerpt -->
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ultrices egestas nunc, quis venenatis orci tincidunt id. Fusce commodo blandit eleifend.</p>
-                        <!-- Reading More -->
-                        <div class="post-continue-reading-share mt-30">
-                            <div class="post-continue-btn">
-                                <a href="#" class="font-pt">Continue Reading <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4">
-                    <!-- Gazette Welcome Post -->
-                    <div class="gazette-welcome-post">
-                        <!-- Post Tag -->
-                        <div class="gazette-post-tag">
-                            <a href="#">Politices</a>
-                        </div>
-                        <h2 class="font-pt">Judge throws out ethics case against Trump</h2>
-                        <p class="gazette-post-date">March 29, 2016</p>
-                        <!-- Post Thumbnail -->
-                        <div class="blog-post-thumbnail my-5">
-                            <img src="{% static 'img/blog-img/20.jpg' %}" alt="post-thumb">
-                        </div>
-                        <!-- Post Excerpt -->
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ultrices egestas nunc, quis venenatis orci tincidunt id. Fusce commodo blandit eleifend.</p>
-                        <!-- Reading More -->
-                        <div class="post-continue-reading-share mt-30">
-                            <div class="post-continue-btn">
-                                <a href="#" class="font-pt">Continue Reading <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
                 <div class="col-12 col-md-6">
                     <!-- Gazette Welcome Post -->
                     <div class="gazette-welcome-post">
